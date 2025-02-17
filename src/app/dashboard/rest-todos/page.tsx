@@ -10,9 +10,7 @@ export const metadata = {
 };
 
 export default async function RestTodosPage() {
-  const todos = await prisma.todo.findMany({ orderBy: {export const dynamic = "force-dynamic";
-export const revalidate =  0
- description: "asc" } });
+  const todos = await prisma.todo.findMany({ orderBy: { description: "asc" } });
 
   return (
     <div>
@@ -23,4 +21,3 @@ export const revalidate =  0
     </div>
   );
 }
-
