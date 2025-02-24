@@ -23,8 +23,9 @@ export const TodoItem = ({ todo, toggleTodo }: Props) => {
   const onToggleTodo = async () => {
     try {
       startTransition(() => toggleTodoOptimistic(!todoOptimistic.complete));
-      await toggleTOdo(todoOptimistic.id, !todoOptimistic.complete);
+      await toggleTodo(todoOptimistic.id, !todoOptimistic.complete);
     } catch (error) {
+      console.log(error);
       startTransition(() => toggleTodoOptimistic(!todoOptimistic.complete));
     }
   };
@@ -35,9 +36,7 @@ export const TodoItem = ({ todo, toggleTodo }: Props) => {
     >
       <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
         <div
-          onClick={() =>
-            onToggleTodo(todoOptimistic.id, !todoOptimistic.complete)
-          }
+          onClick={() => onToggleTodo()}
           className={`
             flex p-2 rounded-md cursor-pointer
             hover:bg-opacity-60

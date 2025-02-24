@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
 import { Todo } from "@prisma/client";
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import * as yup from "yup";
 
 interface Segments {
@@ -12,7 +12,7 @@ const getTodo = async (id: string): Promise<Todo | null> => {
   return todo;
 };
 
-export async function GET(request: Request, { params }: Segments) {
+export async function GET(_request: Request, { params }: Segments) {
   const { id } = await params;
   const todo = await getTodo(id);
 
@@ -57,4 +57,3 @@ export async function PUT(request: Request, { params }: Segments) {
     return NextResponse.json(error, { status: 400 });
   }
 }
-
