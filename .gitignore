@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 package-lock*
+bun.lock
 /.pnp
 .pnp.*
 .yarn/*
