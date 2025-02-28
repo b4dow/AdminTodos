@@ -4,32 +4,36 @@ Pasos para levantar la app en desarrollo
 
 1. Levantar la base de datos
 
-```
+```bash
 docker compose up -d
 ```
 
-2. Crear una copia de el .env.template y renombrarlo a .env
-3. Reemplazar las variables de entorno
-4. Ejecutar el comando `npm install` para reconstruir los módulos de node
-5. Ejecutar el comando `npm run dev` para ejecutar aplicación en desarrollo
-6. Ejecutar estos comandos de Prisma
+2.Crear una copia de el .env.template y renombrarlo a .env
+3.Reemplazar las variables de entorno
+4.Ejecutar el comando `npm install` para reconstruir los módulos de node
+5.Ejecutar el comando `npm run dev` para ejecutar aplicación en desarrollo
+6.Ejecutar estos comandos de Prisma
 
-```
+```bash
 npx prisma migrate dev
 npx prisma generate
 ```
 
-7. Ejecutar el SEED para [crear la base de datos local](localhost:3000/api/seed)
+7.Ejecutar el SEED para [crear la base de datos local](localhost:3000/api/seed)
 
-# Prisma commands
+## Prisma commands
 
-```
+```bash
 npx prisma init
 npx prisma migrate dev
 npx prisma generate
 
 ```
 
-# Prod
+## Prod
 
-# Stage
+```bash
+npm run build
+```
+
+## Stage
